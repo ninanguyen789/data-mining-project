@@ -1,0 +1,46 @@
+
+> mfit = glm(death_yn ~ symptom_status +	hosp_yn+	icu_yn+	underlying_conditions_yn+	Male + Eightn_to_fourtyNineyears	+ Fifty_to_Sixty_years +	OverFive .... [TRUNCATED] 
+
+> summary(mfit)
+
+Call:
+glm(formula = death_yn ~ symptom_status + hosp_yn + icu_yn + 
+    underlying_conditions_yn + Male + Eightn_to_fourtyNineyears + 
+    Fifty_to_Sixty_years + OverFiveN_over_years + AmeInd_Alask_Natv + 
+    Asian + Black + Mult_Other + NatHawaiianN_OtherPacif_Islder, 
+    family = binomial(link = "logit"), data = mydata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.6614  -0.0701  -0.0133  -0.0127   4.0348  
+
+Coefficients:
+                                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                    -22.10094  110.72496  -0.200 0.841792    
+symptom_status                  -0.92007    0.06468 -14.225  < 2e-16 ***
+hosp_yn                          1.33565    0.03495  38.213  < 2e-16 ***
+icu_yn                           1.36871    0.04514  30.322  < 2e-16 ***
+underlying_conditions_yn         3.67706    1.00338   3.665 0.000248 ***
+Male                             0.09356    0.03154   2.967 0.003012 ** 
+Eightn_to_fourtyNineyears        9.91286  110.72110   0.090 0.928661    
+Fifty_to_Sixty_years            13.24210  110.72049   0.120 0.904801    
+OverFiveN_over_years            16.71624  110.72046   0.151 0.879994    
+AmeInd_Alask_Natv              -12.92043  572.39697  -0.023 0.981991    
+Asian                           -0.13781    0.13101  -1.052 0.292860    
+Black                           -0.09243    0.06122  -1.510 0.131132    
+Mult_Other                      -1.22774    0.14310  -8.580  < 2e-16 ***
+NatHawaiianN_OtherPacif_Islder -14.74743  274.70711  -0.054 0.957187    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 47999  on 165407  degrees of freedom
+Residual deviance: 28485  on 165394  degrees of freedom
+AIC: 28513
+
+Number of Fisher Scoring iterations: 18
+
+
+> # Turn off output
+> sink();
